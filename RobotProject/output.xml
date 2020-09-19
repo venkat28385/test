@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200823 21:14:28.914" rpa="false">
+<suite id="s1" name="RobotProject" source="C:\Users\Shanmugapriya\eclipse-workspace\RobotProject">
+<suite id="s1-s1" name="Test" source="C:\Users\Shanmugapriya\eclipse-workspace\RobotProject\Test">
+<suite id="s1-s1-s1" name="Suite" source="C:\Users\Shanmugapriya\eclipse-workspace\RobotProject\Test\Suite">
+<suite id="s1-s1-s1-s1" name="Api" source="C:\Users\Shanmugapriya\eclipse-workspace\RobotProject\Test\Suite\Api.robot">
+<test id="s1-s1-s1-s1-t1" name="Testcase1">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20200823 21:14:30.016" level="INFO">Creating Session using : alias=mysession, url=http://localhost:3000/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200823 21:14:30.015" endtime="20200823 21:14:30.016"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>mysession</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200823 21:14:32.063" level="INFO">GET Request : url=http://localhost:3000// 
+ path_url=// 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20200823 21:14:32.064" level="INFO">GET Response : url=http://localhost:3000// 
+ status=200, reason=OK 
+ body=&lt;html&gt;
+  &lt;head&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    /&gt;
+    &lt;link rel="stylesheet" href="style.css" /&gt;
+    &lt;title&gt;JSON Server&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;div class="container"&gt;
+        &lt;nav&gt;
+          &lt;ul&gt;
+            &lt;li class="title"&gt;
+              JSON Server
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="https://github.com/users/typicode/sponsorship"&gt;
+                &lt;i class="fas fa-heart"&gt;&lt;/i&gt;GitHub Sponsors
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="https://my-json-server.typicode.com"&gt;
+                &lt;i class="fas fa-burn"&gt;&lt;/i&gt;My JSON Server
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="https://thanks.typicode.com"&gt;
+                &lt;i class="far fa-laugh"&gt;&lt;/i&gt;Supporters
+              &lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;div class="container"&gt;
+        &lt;h1&gt;Congrats!&lt;/h1&gt;
+        &lt;p&gt;
+          You're successfully running JSON Server
+          &lt;br /&gt;
+          ✧*｡٩(ˊᗜˋ*)و✧*｡
+        &lt;/p&gt;
+
+        &lt;div id="resources"&gt;&lt;/div&gt;
+
+        &lt;p&gt;
+          To access and modify resources, you can use any HTTP method:
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;code&gt;GET&lt;/code&gt;
+          &lt;code&gt;POST&lt;/code&gt;
+          &lt;code&gt;PUT&lt;/code&gt;
+          &lt;code&gt;PATCH&lt;/code&gt;
+          &lt;code&gt;DELETE&lt;/code&gt;
+          &lt;code&gt;OPTIONS&lt;/code&gt;
+        &lt;/p&gt;
+
+        &lt;div id="custom-routes"&gt;&lt;/div&gt;
+
+        &lt;h1&gt;Documentation&lt;/h1&gt;
+        &lt;p&gt;
+          &lt;a href="https://github.com/typicode/json-server"&gt;
+            README
+          &lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+      &lt;div class="container"&gt;
+        &lt;p&gt;
+          To replace this page, create a
+          &lt;code&gt;./public/index.html&lt;/code&gt; file.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20200823 21:14:32.064" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200823 21:14:30.016" endtime="20200823 21:14:32.064"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20200823 21:14:32.065" endtime="20200823 21:14:32.066"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${respons_code}</var>
+</assign>
+<msg timestamp="20200823 21:14:32.066" level="INFO">${respons_code} = 200</msg>
+<status status="PASS" starttime="20200823 21:14:32.066" endtime="20200823 21:14:32.067"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${respons_code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20200823 21:14:32.067" endtime="20200823 21:14:32.067"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${body}</var>
+</assign>
+<msg timestamp="20200823 21:14:32.068" level="INFO">${body} = &lt;html&gt;
+  &lt;head&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLX...</msg>
+<status status="PASS" starttime="20200823 21:14:32.067" endtime="20200823 21:14:32.068"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${body}</arg>
+<arg>json-server</arg>
+</arguments>
+<status status="PASS" starttime="20200823 21:14:32.069" endtime="20200823 21:14:32.069"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<assign>
+<var>${contentTypeValue}</var>
+</assign>
+<msg timestamp="20200823 21:14:32.070" level="INFO">${contentTypeValue} = text/html; charset=UTF-8</msg>
+<status status="PASS" starttime="20200823 21:14:32.069" endtime="20200823 21:14:32.070"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${contentTypeValue}</arg>
+<arg>text/html; charset=UTF-8</arg>
+</arguments>
+<status status="PASS" starttime="20200823 21:14:32.070" endtime="20200823 21:14:32.071"></status>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<status status="PASS" starttime="20200823 21:14:32.071" endtime="20200823 21:14:32.071"></status>
+</kw>
+<status status="PASS" starttime="20200823 21:14:30.014" endtime="20200823 21:14:32.072" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200823 21:14:29.885" endtime="20200823 21:14:32.073"></status>
+</suite>
+<status status="PASS" starttime="20200823 21:14:29.882" endtime="20200823 21:14:32.075"></status>
+</suite>
+<status status="PASS" starttime="20200823 21:14:29.879" endtime="20200823 21:14:32.077"></status>
+</suite>
+<status status="PASS" starttime="20200823 21:14:29.851" endtime="20200823 21:14:32.079"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="RobotProject">RobotProject</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Test">RobotProject.Test</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Suite">RobotProject.Test.Suite</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1" name="Api">RobotProject.Test.Suite.Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
