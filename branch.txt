@@ -1,4 +1,5 @@
 npm install -g jason-server
+tstesd:wq
 
 json-server -- watch db.json
 
